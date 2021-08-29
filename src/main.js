@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import gameConfig from './gameConfig.js';
 
+
 function newGame () {
   if (game) return;
   game = new Phaser.Game(gameConfig);

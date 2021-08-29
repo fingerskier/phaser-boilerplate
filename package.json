@@ -2,11 +2,11 @@
   "name": "phaser-parcel",
   "version": "1.0.0",
   "description": "A Phaser 3 game template using Parcel bundler",
-  "main": "src/index.html",
+  "main": "src/main.js",
   "scripts": {
-    "build": "parcel build src/index.html --public-url ./ --no-source-maps",
-    "watch": "parcel watch src/index.html",
-    "start": "parcel serve src/index.html",
+    "build": "npx parcel build src/index.html --public-url ./ --no-source-maps",
+    "watch": "npx parcel watch src/index.html",
+    "start": "npx parcel serve src/index.html",
     "clean": "rm -v dist/*",
     "test": "npx eslint src"
   },
@@ -21,6 +21,7 @@
     "phaser": "^3.55.2"
   },
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
     "cssnano": "^5.0.8",
     "eslint": "^7.32.0",
     "eslint-config-semistandard": "^13.0.0",
