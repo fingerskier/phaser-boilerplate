@@ -1,12 +1,14 @@
 Phaser 3 with Parcel
 ====================
 
-This is a simple Phaser game template using [Parcel](https://parceljs.org). Most common transformations ([CoffeeScript](https://parceljs.org/coffeeScript.html), [Babel/Flow](https://parceljs.org/javascript.html), [TypeScript](https://parceljs.org/typeScript.html)) work “out of the box”.
+This is a simple Phaser PWA game template using [Parcel](https://parceljs.org).
+...forked from [https://github.com/samme/phaser-parcel](https://github.com/samme/phaser-parcel)
+
 
 Use
 ---
 
-```
+```sh
 ## Open this repo: <https://github.com/fingerskier/phaser-boilerplate> and click "Use this template"
   - or clone it and reset the .git
 
@@ -40,9 +42,15 @@ import images from './assets/*.png'; // -> { space: './space.89e3a46b.png', … 
 ```
 
 
-See [BootScene](./src/BootScene.js) for an example.
+In this project assets are only in the `/dist` folder.  If desired you could add a prebuild script to copy yours overs.
 
-If you prefer, you can [use a plugin to copy static assets](https://github.com/elwin013/parcel-plugin-static-files-copy 'parcel-plugin-static-files-copy') instead.
+
+Offline Support
+---------------
+
+This project has PWA baked-in via the web-manifest and service-worker:
+- `/src/manifest.webmanifest` contains the install info
+- `/dist/service-worker.js` handles the offline caching and such.  For more on this see [The Service-Worker Cookbook](https://serviceworke.rs/)
 
 
 Package aliasing
@@ -75,8 +83,3 @@ If you don't like [hot reload](https://parceljs.org/hmr.html) at all, you can tu
 ```sh
 parcel serve src/index.html --no-hmr
 ```
-
-More Phaser with Parcel
------------------------
-
-- [phaser3-parcel-template](https://github.com/ourcade/phaser3-parcel-template)
