@@ -6,26 +6,27 @@ This is a simple Phaser game template using [Parcel](https://parceljs.org). Most
 Use
 ---
 
-```sh
-# If you don't have Parcel, install it:
-npm install -g parcel-bundler
+```
+## Open this repo: <https://github.com/fingerskier/phaser-boilerplate> and click "Use this template"
+  - or clone it and reset the .git
 
-# Clone or download this repo or its template <https://github.com/samme/phaser-parcel/generate>
-# From the project directory, install:
+## From the project directory, install:
 npm install
 
-# Auto-compile and run dev server:
+## Auto-compile and run dev server:
 npm run start
 
-# Compile for production:
+## Compile for production:
 npm run build
 ```
+
 
 You can edit these scripts in [package.json](./package.json) to suit your needs. See:
 
 - [Parcel: Getting Started](https://parceljs.org/getting_started.html)
 - [Parcel: Production](https://parceljs.org/production.html)
 - [Parcel: CLI](https://parceljs.org/cli.html)
+
 
 Game assets
 -----------
@@ -38,9 +39,11 @@ import space from './assets/space.png'); // -> './space.89e3a46b.png'
 import images from './assets/*.png'; // -> { space: './space.89e3a46b.png', … }
 ```
 
+
 See [BootScene](./src/BootScene.js) for an example.
 
 If you prefer, you can [use a plugin to copy static assets](https://github.com/elwin013/parcel-plugin-static-files-copy 'parcel-plugin-static-files-copy') instead.
+
 
 Package aliasing
 ----------------

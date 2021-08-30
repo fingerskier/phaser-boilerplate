@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import gameConfig from './gameConfig.js';
 
+const serviceWorker = './service-worker.js'
+
 
 function newGame () {
   if (game) return;
@@ -16,9 +18,18 @@ function destroyGame () {
 
 let game;
 
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register(serviceWorker);
+  });
+}
+
+
 if (module.hot) {
   module.hot.dispose(destroyGame);
   module.hot.accept(newGame);
 }
+
 
 if (!game) newGame();

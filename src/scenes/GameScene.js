@@ -26,13 +26,13 @@ export default class GameScene extends Phaser.Scene {
 
   preload() {
     // this path is relative to the 'dist' folder
-		this.load.image(SKY, 'assets/sky.png')
-		this.load.image(GROUND, 'assets/platform.png')
-		this.load.image(STAR, 'assets/star.png')
-		this.load.image(BOMB, 'assets/bomb.png')
+		this.load.image(SKY, './assets/sky.png')
+		this.load.image(GROUND, './assets/platform.png')
+		this.load.image(STAR, './assets/star.png')
+		this.load.image(BOMB, './assets/bomb.png')
 
 		this.load.spritesheet(DUDE, 
-			'assets/dude.png',
+			'./assets/dude.png',
 			{ frameWidth: 32, frameHeight: 48 }
 		)
 
