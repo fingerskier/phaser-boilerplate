@@ -1,6 +1,10 @@
 /.cache
 /package-lock.json
 
+/dist
+!/dist/service-worker.js
+!/dist/assets
+
 # Logs
 logs
 *.log

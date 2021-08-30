@@ -1,9 +1,5 @@
 import Phaser from 'phaser';
-import BootScene from './BootScene';
-import EndScene from './EndScene';
 import GameScene from "./scenes/GameScene";
-import PlayScene from './PlayScene';
-import MenuScene from './MenuScene';
 
 
 export default {
@@ -19,5 +15,5 @@ export default {
 			gravity: { y: 300 }
 		}
 	},
-  scene: [GameScene, BootScene, MenuScene, PlayScene, EndScene]
+  scene: [GameScene]
 };

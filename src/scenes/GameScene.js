@@ -11,8 +11,6 @@ const STAR = 'STAR'
 
 
 export default class GameScene extends Phaser.Scene {
-  
-  
   constructor() {
     super('game-scene')
     
@@ -131,6 +129,16 @@ export default class GameScene extends Phaser.Scene {
 
     return label
   }
+
+
+  createSubscriptionButton(x, y, score) {
+    const style = {fontSize: '24px', fill: '#FFF'}
+    const button = new PushNotificationButton(this, x, y, style)
+
+    this.add.existing(button)  // add is an inherited method
+
+    return button
+  }
   
 
   createStars() {
@@ -155,6 +163,11 @@ export default class GameScene extends Phaser.Scene {
     player.anims.play('turn')
 
     this.gameOver = true
+  }
+
+
+  subscriptionButtonClick() {
+    console.log('sub button clicked')
   }
 
 

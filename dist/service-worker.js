@@ -5,31 +5,6 @@ const CURRENT_CACHE = `main-${CACHE_VERSION}`;
 // these are the routes we are going to cache for offline support
 const cacheFiles = ['/', '/assets/', '/offline/'];
 
-// on activation we clean up the previously registered service workers
-self.addEventListener('activate', evt =>
-  evt.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CURRENT_CACHE) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  )
-);
-
-
-// on install we download the routes we want to cache for offline
-self.addEventListener('install', evt =>
-  evt.waitUntil(
-    caches.open(CURRENT_CACHE).then(cache => {
-      return cache.addAll(cacheFiles);
-    })
-  )
-);
-
 
 // fetch the resource from the network
 const fromNetwork = (request, timeout) =>
@@ -68,6 +43,33 @@ const update = request =>
   .catch(console.error)
 
 
+  
+// on activation we clean up the previously registered service workers
+self.addEventListener('activate', evt =>
+evt.waitUntil(
+  caches.keys().then(cacheNames => {
+    return Promise.all(
+      cacheNames.map(cacheName => {
+        if (cacheName !== CURRENT_CACHE) {
+          return caches.delete(cacheName);
+        }
+      })
+    );
+  })
+)
+);
+
+
+// on install we download the routes we want to cache for offline
+self.addEventListener('install', evt =>
+evt.waitUntil(
+  caches.open(CURRENT_CACHE).then(cache => {
+    return cache.addAll(cacheFiles);
+  })
+)
+);
+
+
 // general strategy when making a request:
 // - if online try to fetch it from the network [with a timeout]
 // - if something fails serve from cache
@@ -78,3 +80,37 @@ self.addEventListener('fetch', evt => {
   
   evt.waitUntil(update(evt.request));
 })
+
+
+// self.addEventListener('push', function(event) {
+//   console.log(event)
+//   event.waitUntil(E=>{
+//     console.log(E)
+//     self.registration.showNotification('Server Notification', {
+//       body: 'Subscribed Notification'
+//     })
+//   })
+// })
+
+
+// self.addEventListener('pushsubscriptionchange', function(event) {
+//   console.log('Subscription expired');
+
+//   event.waitUntil(
+//     self.registration.pushManager.subscribe({ userVisibleOnly: true })
+//     .then(function(subscription) {
+//       console.log('Subscribed after expiration', subscription.endpoint)
+
+//       return fetch('http://localhost:3456/notify/register', {
+//         body: JSON.stringify({
+//           endpoint: subscription.endpoint
+//         }),
+//         headers: {
+//           'Content-type': 'application/json'
+//         },
+//         method: 'post',
+//         mode: 'cors',
+//       });
+//     })
+//   );
+// });
