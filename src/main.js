@@ -1,7 +1,9 @@
+import './lib/mqttws31.min.js'
 import Phaser from 'phaser';
 import gameConfig from './gameConfig.js';
 
 import './windowConfig.js'
+
 
 const serviceWorker = './service-worker.js'
 

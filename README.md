@@ -5,6 +5,15 @@ This is a simple Phaser PWA game template using [Parcel](https://parceljs.org).
 ...forked from [https://github.com/samme/phaser-parcel](https://github.com/samme/phaser-parcel)
 
 
+Features
+========
+
+- Phaser game-engine
+- Parcel packaging
+- MQTT client
+- Local DB client ~ IndexedDB/Dexie.js 
+
+
 Use
 ---
 

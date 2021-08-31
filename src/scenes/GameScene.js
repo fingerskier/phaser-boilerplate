@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 import BombSpawner from "./BombSpawner";
 import ScoreLabel from "../ui/ScoreLabel"
+import MqttButton from '../ui/MqttButton';
 
 
 const BOMB = 'BOMB'
@@ -47,6 +48,8 @@ export default class GameScene extends Phaser.Scene {
     this.player = this.createPlayer()
 
     this.ScoreLabel = this.createScoreLabel(16, 16, 0)
+    this.clientButton = this.createMQTTButton(300, 300)
+    console.log(this.clientButton)
 
     this.bombSpawner = new BombSpawner(this, BOMB)
 
@@ -119,6 +122,16 @@ export default class GameScene extends Phaser.Scene {
 
     return player
 	}
+
+
+  createMQTTButton(x, y) {
+    const style = {fontSize: '32px', fill: '#000'}
+    const label = new MqttButton(this, x, y, style)
+
+    this.add.existing(label)  // add is an inherited method
+
+    return label
+  }
 
 
   createScoreLabel(x, y, score) {

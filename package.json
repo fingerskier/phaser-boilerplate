@@ -1,7 +1,7 @@
 {
-  "name": "phaser-parcel",
+  "name": "phaser-boilerplate",
   "version": "1.0.0",
-  "description": "A Phaser 3 game template using Parcel bundler",
+  "description": "Phaser game template using Parcel bundler",
   "main": "src/main.js",
   "scripts": {
     "build": "npx parcel build src/index.html --public-url ./",
@@ -15,9 +15,10 @@
     "phaser3",
     "phaser-boilerplate"
   ],
-  "author": "samme",
+  "author": "fingerskier",
   "license": "ISC",
   "dependencies": {
+    "mqtt": "^4.2.8",
     "phaser": "^3.55.2"
   },
   "devDependencies": {
