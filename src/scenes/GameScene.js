@@ -49,7 +49,6 @@ export default class GameScene extends Phaser.Scene {
 
     this.ScoreLabel = this.createScoreLabel(16, 16, 0)
     this.clientButton = this.createMQTTButton(300, 300)
-    console.log(this.clientButton)
 
     this.bombSpawner = new BombSpawner(this, BOMB)
 

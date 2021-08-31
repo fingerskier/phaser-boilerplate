@@ -11,7 +11,7 @@ Features
 - Phaser game-engine
 - Parcel packaging
 - MQTT client
-- Local DB client ~ IndexedDB/Dexie.js 
+- PWA: service-worker & manifest for offline/installable web-app
 
 
 Use

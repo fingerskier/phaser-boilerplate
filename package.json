@@ -1,7 +1,8 @@
 {
+  "author": "fingerskier",
+  "description": "Phaser surface template",
   "name": "phaser-boilerplate",
   "version": "1.0.0",
-  "description": "Phaser game template using Parcel bundler",
   "main": "src/main.js",
   "scripts": {
     "build": "npx parcel build src/index.html --public-url ./",
@@ -15,9 +16,10 @@
     "phaser3",
     "phaser-boilerplate"
   ],
-  "author": "fingerskier",
-  "license": "ISC",
+  "license": "MIT",
+
   "dependencies": {
+    "jsstore": "^4.3.7",
     "mqtt": "^4.2.8",
     "phaser": "^3.55.2"
   },
